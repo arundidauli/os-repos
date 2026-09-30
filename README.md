@@ -2,7 +2,7 @@
 
 > **A curated, production-ready directory of high-impact open-source software replacing expensive proprietary subscriptions, complete with self-hosting commands and client service guides.**
 
-
+[Live](https://arundidauli.github.io/os-repos/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 [![Built with Vite + React + Tailwind](https://img.shields.io/badge/Built%20with-Vite%20%7C%20React%2018%20%7C%20TailwindCSS-06b6d4.svg)](https://vitejs.dev)
 [![100% Client Side](https://img.shields.io/badge/Architecture-100%25%20Static%20%7C%20No%20Backend-purple.svg)](https://pages.github.com)
