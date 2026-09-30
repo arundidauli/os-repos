@@ -40,12 +40,15 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 }) => {
   const quickTags = [
     { id: 'all', label: 'All Projects' },
+    { id: 'bounties', label: '💎 Bounties & Jobs' },
     { id: 'india', label: '🇮🇳 Made in India' },
-    { id: 'ai', label: '🤖 AI & Automation' },
-    { id: 'popular', label: '🔥 30k+ Stars' },
-    { id: 'business', label: '💼 ERP & CRM' },
+    { id: 'agency', label: '⚡ Automation & Agency' },
+    { id: 'ai', label: '🤖 AI & Trading' },
+    { id: 'playbooks', label: '📚 Playbooks & Stacks' },
+    { id: 'business', label: '💼 ERP, CRM & Billing' },
+    { id: 'testing', label: '📱 Mobile & Testing' },
     { id: 'hosting', label: '☁️ Cloud & PaaS' },
-    { id: 'marketing', label: '📣 Marketing' },
+    { id: 'popular', label: '🔥 30k+ Stars' },
   ];
 
   return (

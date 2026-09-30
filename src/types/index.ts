@@ -28,7 +28,11 @@ export type CategoryType =
   | 'clients'
   | 'sell'
   | 'time'
-  | 'payments';
+  | 'payments'
+  | 'bounties'
+  | 'playbooks'
+  | 'resources'
+  | 'career';
 
 export interface Repo {
   id: string;

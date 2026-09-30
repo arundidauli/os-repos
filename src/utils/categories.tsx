@@ -3,7 +3,8 @@ import {
   Zap, Code2, Calendar, Briefcase, Globe, Activity, 
   LayoutTemplate, Database, Terminal, ShieldCheck, 
   Smartphone, MessageSquare, Clock, CreditCard, Lock,
-  Share2, ShoppingCart, UserCheck, Layers, Server
+  Share2, ShoppingCart, UserCheck, Layers, Server,
+  Gem, BookOpen, Bookmark, UserSearch, FolderGit2
 } from 'lucide-react';
 import { CategoryType } from '../types';
 
@@ -15,6 +16,30 @@ export interface CategoryInfo {
 }
 
 export const CATEGORY_DETAILS: Record<CategoryType | string, CategoryInfo> = {
+  bounties: {
+    label: 'Paid Bounties',
+    color: 'text-emerald-400',
+    badgeClass: 'text-emerald-300 bg-emerald-500/15 border-emerald-500/30',
+    icon: <Gem size={14} />
+  },
+  career: {
+    label: 'AI Jobs & Career',
+    color: 'text-cyan-400',
+    badgeClass: 'text-cyan-300 bg-cyan-500/15 border-cyan-500/30',
+    icon: <UserSearch size={14} />
+  },
+  playbooks: {
+    label: 'Playbooks & Roadmaps',
+    color: 'text-amber-400',
+    badgeClass: 'text-amber-300 bg-amber-500/15 border-amber-500/30',
+    icon: <BookOpen size={14} />
+  },
+  resources: {
+    label: 'Curated Stacks',
+    color: 'text-violet-400',
+    badgeClass: 'text-violet-300 bg-violet-500/15 border-violet-500/30',
+    icon: <FolderGit2 size={14} />
+  },
   automation: {
     label: 'Automation',
     color: 'text-blue-400',
@@ -114,7 +139,7 @@ export const CATEGORY_DETAILS: Record<CategoryType | string, CategoryInfo> = {
   dev: {
     label: 'Developer Utilities',
     color: 'text-gray-400',
-    badgeClass: 'text-gray-400 bg-gray-500/10 border-gray-500/20',
+    badgeClass: 'text-gray-400 bg-gray-500/10 border-gray-400/20',
     icon: <Terminal size={14} />
   },
   testing: {
