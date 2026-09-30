@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
   Search, X, ChevronDown, LayoutGrid, List, 
-  ArrowUpDown, Filter, Sparkles
+  ArrowUpDown, Layers, Award, Globe, Zap, Cpu, 
+  BookOpen, Building2, Smartphone, Cloud, Star
 } from 'lucide-react';
 import { SortOption, ViewMode } from '../types';
 
@@ -39,16 +40,16 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onResetFilters
 }) => {
   const quickTags = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'bounties', label: '💎 Bounties & Jobs' },
-    { id: 'india', label: '🇮🇳 Made in India' },
-    { id: 'agency', label: '⚡ Automation & Agency' },
-    { id: 'ai', label: '🤖 AI & Trading' },
-    { id: 'playbooks', label: '📚 Playbooks & Stacks' },
-    { id: 'business', label: '💼 ERP, CRM & Billing' },
-    { id: 'testing', label: '📱 Mobile & Testing' },
-    { id: 'hosting', label: '☁️ Cloud & PaaS' },
-    { id: 'popular', label: '🔥 30k+ Stars' },
+    { id: 'all', label: 'All Projects', icon: <Layers size={13} /> },
+    { id: 'bounties', label: 'Bounties & Jobs', icon: <Award size={13} /> },
+    { id: 'india', label: 'Made in India', icon: <Globe size={13} /> },
+    { id: 'agency', label: 'Automation & Agency', icon: <Zap size={13} /> },
+    { id: 'ai', label: 'AI & Data', icon: <Cpu size={13} /> },
+    { id: 'playbooks', label: 'Playbooks & Stacks', icon: <BookOpen size={13} /> },
+    { id: 'business', label: 'ERP & Billing', icon: <Building2 size={13} /> },
+    { id: 'testing', label: 'Mobile & Testing', icon: <Smartphone size={13} /> },
+    { id: 'hosting', label: 'Cloud & PaaS', icon: <Cloud size={13} /> },
+    { id: 'popular', label: '30k+ Stars', icon: <Star size={13} /> },
   ];
 
   return (
@@ -67,7 +68,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               type="text" 
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Search projects, tech, SaaS replaced (e.g. Zapier, Airtable, India)..." 
+              placeholder="Search projects, categories, or software replaced (e.g. Zapier, Airtable, India)..." 
               className="w-full pl-11 pr-24 py-3.5 bg-transparent border-none outline-none text-white text-sm sm:text-base placeholder-slate-500 font-normal"
             />
             
@@ -77,7 +78,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 <button 
                   onClick={() => onSearchChange('')}
                   className="p-1 rounded-md text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
-                  title="Clear search"
+                  title="Clear search query"
+                  aria-label="Clear search query"
                 >
                   <X size={16} />
                 </button>
@@ -94,6 +96,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               value={selectedCategory}
               onChange={(e) => onCategoryChange(e.target.value)}
               className="w-full h-full appearance-none pl-3.5 pr-10 py-3.5 bg-[#0d0f17] border border-white/5 hover:border-white/10 rounded-xl outline-none text-white text-sm cursor-pointer focus:border-emerald-500/50 transition-colors"
+              aria-label="Filter by category"
             >
               <option value="">All Categories ({categories.length})</option>
               {categories.map(cat => (
@@ -105,16 +108,17 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
           </div>
 
-          {/* Sort By Dropdown */}
+          {/* Sort By Dropdown (No emojis) */}
           <div className="relative sm:w-48 flex-shrink-0">
             <select 
               value={sortOption}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
               className="w-full h-full appearance-none pl-3.5 pr-10 py-3.5 bg-[#0d0f17] border border-white/5 hover:border-white/10 rounded-xl outline-none text-white text-sm cursor-pointer focus:border-emerald-500/50 transition-colors"
+              aria-label="Sort projects"
             >
-              <option value="stars-desc">Most Stars ⭐</option>
+              <option value="stars-desc">Most Stars</option>
               <option value="stars-asc">Least Stars</option>
-              <option value="savings-desc">Highest SaaS Value 💰</option>
+              <option value="savings-desc">Highest Cost Savings</option>
               <option value="name-asc">Name (A to Z)</option>
               <option value="name-desc">Name (Z to A)</option>
             </select>
@@ -152,9 +156,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </div>
       </div>
 
-      {/* Quick Filter Tag Pills & Status */}
+      {/* Quick Filter Tag Pills with SVG Icons (No Emojis) */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-        {/* Pills */}
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {quickTags.map(tag => {
             const isActive = activeFilterTag === tag.id;
@@ -162,13 +165,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <button
                 key={tag.id}
                 onClick={() => onFilterTagChange(tag.id)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-all ${
+                className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border transition-all ${
                   isActive 
                     ? 'bg-emerald-500/20 border-emerald-500/40 text-emerald-300 shadow-sm shadow-emerald-500/10' 
                     : 'bg-[#11131a] hover:bg-white/5 border-white/5 hover:border-white/10 text-slate-400 hover:text-slate-200'
                 }`}
               >
-                {tag.label}
+                {tag.icon}
+                <span>{tag.label}</span>
               </button>
             );
           })}
@@ -177,7 +181,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         {/* Counter and Reset */}
         <div className="flex items-center gap-3 text-xs text-slate-400 ml-auto">
           <span>
-            Showing <strong className="text-white font-mono">{filteredCount}</strong> of <span className="font-mono">{totalCount}</span> repos
+            Showing <strong className="text-white font-mono">{filteredCount}</strong> of <span className="font-mono">{totalCount}</span> projects
           </span>
           {(searchQuery || selectedCategory || activeFilterTag !== 'all') && (
             <button

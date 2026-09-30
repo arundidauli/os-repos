@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calculator, DollarSign, Check, Plus, ArrowRight, Sparkles } from 'lucide-react';
+import { X, Calculator, Check, ArrowRight } from 'lucide-react';
 import { Repo } from '../types';
 
 interface CalculatorModalProps {
@@ -15,7 +15,7 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
   repos,
   onSelectRepo
 }) => {
-  // Common selectable SaaS tools with replacement repos
+  // Tools with estimated cost savings
   const toolsWithSavings = repos
     .filter(r => (r.monthlySavingsUsd || 0) > 0)
     .sort((a, b) => (b.monthlySavingsUsd || 0) - (a.monthlySavingsUsd || 0));
@@ -78,10 +78,10 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
             </div>
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-white">
-                SaaS Savings & Agency Retainer Calculator
+                Software Cost Savings Calculator
               </h2>
               <p className="text-xs sm:text-sm text-slate-400">
-                Select the proprietary SaaS your team or clients use to compute potential ROI.
+                Select the commercial tools your team or clients use to see potential cost savings.
               </p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-6">
           <div className="glass-panel p-4 rounded-2xl border-emerald-500/30 bg-emerald-500/5 text-center">
             <span className="block text-xs uppercase font-semibold text-emerald-400 mb-1">
-              Monthly SaaS Saved
+              Monthly Cost Saved
             </span>
             <span className="text-3xl font-extrabold text-white font-mono">
               ${totalMonthlySavings.toLocaleString()}
@@ -118,12 +118,12 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
 
           <div className="glass-panel p-4 rounded-2xl border-purple-500/30 bg-purple-500/5 text-center">
             <span className="block text-xs uppercase font-semibold text-purple-400 mb-1">
-              Agency AMC Potential
+              Client Retainer Potential
             </span>
             <span className="text-3xl font-extrabold text-white font-mono">
               ${estimatedAgencyRetainer.toLocaleString()}
             </span>
-            <span className="block text-[11px] text-slate-400 mt-1">approx. billing/client</span>
+            <span className="block text-[11px] text-slate-400 mt-1">suggested service fee</span>
           </div>
         </div>
 
@@ -131,7 +131,7 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
         <div className="space-y-3 flex-grow">
           <div className="flex items-center justify-between">
             <h3 className="text-xs uppercase font-semibold text-slate-400 tracking-wider">
-              Select Proprietary Tools ({selectedToolIds.length} chosen)
+              Select Commercial Tools ({selectedToolIds.length} chosen)
             </h3>
             <div className="space-x-2 text-xs">
               <button
@@ -188,7 +188,7 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({
         {selectedRepos.length > 0 && (
           <div className="mt-6 pt-5 border-t border-white/10">
             <h4 className="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-3">
-              Your Open-Source Replacement Stack:
+              Your Recommended Open-Source Stack:
             </h4>
             <div className="flex flex-wrap gap-2">
               {selectedRepos.map(r => (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Star, ArrowUpRight, Github, Zap, Code2, 
-  Bookmark, Copy, Check, ExternalLink, Info, Terminal
+  Bookmark, Copy, Check, ExternalLink, Globe
 } from 'lucide-react';
 import { Repo } from '../types';
 import { getCategoryDetails } from '../utils/categories';
@@ -66,8 +66,9 @@ export const RepoCard: React.FC<RepoCardProps> = ({
             </span>
 
             {repo.isMadeInIndia && (
-              <span className="inline-flex items-center text-[11px] font-medium px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/20">
-                🇮🇳 India
+              <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/20">
+                <Globe size={11} />
+                <span>India</span>
               </span>
             )}
           </div>
@@ -80,8 +81,8 @@ export const RepoCard: React.FC<RepoCardProps> = ({
                 ? 'bg-amber-500/20 border-amber-400 text-amber-300' 
                 : 'bg-white/5 border-white/5 text-slate-400 hover:text-white hover:bg-white/10'
             }`}
-            title={isFavorite ? 'Remove bookmark' : 'Bookmark repository'}
-            aria-label="Bookmark repository"
+            title={isFavorite ? 'Remove bookmark' : 'Bookmark project'}
+            aria-label="Bookmark project"
           >
             <Bookmark size={15} className={isFavorite ? 'fill-amber-400 text-amber-400' : ''} />
           </button>
@@ -113,7 +114,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({
           </div>
         </div>
 
-        {/* Body: Replaces and Monetization notes */}
+        {/* Body: Replaces and Opportunity notes */}
         <div className="space-y-2.5 mb-5 flex-grow">
           {/* Replaces Tool */}
           <div className="bg-[#0e1017] rounded-xl p-3 border border-white/5 flex items-start gap-2.5">
@@ -122,7 +123,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({
             </div>
             <div className="min-w-0 flex-1">
               <span className="block text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
-                Replaces SaaS
+                Replaces Paid Software
               </span>
               <p className="text-xs sm:text-sm font-medium text-slate-200 truncate">
                 {hasDirectReplacement ? repo.pays : <span className="text-slate-500 italic">Self-standing tool</span>}
@@ -130,14 +131,14 @@ export const RepoCard: React.FC<RepoCardProps> = ({
             </div>
           </div>
 
-          {/* Agency & Monetization Blueprint */}
+          {/* Opportunity & Use Cases */}
           <div className="bg-[#0e1017] rounded-xl p-3 border border-white/5 flex items-start gap-2.5">
             <div className="mt-0.5 bg-emerald-500/10 text-emerald-400 p-1 rounded-md flex-shrink-0">
               <Code2 size={13} />
             </div>
             <div className="min-w-0 flex-1">
               <span className="block text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-0.5">
-                Agency Monetization
+                Opportunity & Deployment Note
               </span>
               <p className="text-xs text-slate-300 leading-relaxed line-clamp-2">
                 {repo.note}
@@ -160,7 +161,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({
 
           {/* Open Deep-dive Modal */}
           <span className="text-xs text-slate-400 group-hover:text-emerald-400 font-medium flex items-center gap-1 transition-colors">
-            <span>Playbook & Deploy</span>
+            <span>Guide & Setup</span>
             <ExternalLink size={12} />
           </span>
         </div>

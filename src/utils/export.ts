@@ -1,6 +1,6 @@
 import { Repo } from '../types';
 
-export function exportToJson(repos: Repo[], filename = 'os-money-repos.json') {
+export function exportToJson(repos: Repo[], filename = 'open-source-alternatives.json') {
   const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(repos, null, 2));
   const downloadAnchor = document.createElement('a');
   downloadAnchor.setAttribute('href', dataStr);
@@ -10,8 +10,8 @@ export function exportToJson(repos: Repo[], filename = 'os-money-repos.json') {
   downloadAnchor.remove();
 }
 
-export function exportToCsv(repos: Repo[], filename = 'os-money-repos.csv') {
-  const headers = ['Name', 'Repository', 'Stars', 'Category', 'Replaces', 'Monetization & Agency Notes', 'Website'];
+export function exportToCsv(repos: Repo[], filename = 'open-source-alternatives.csv') {
+  const headers = ['Name', 'Repository', 'Stars', 'Category', 'Replaces', 'Deployment & Value Notes', 'Website'];
   const rows = repos.map(r => [
     `"${r.name.replace(/"/g, '""')}"`,
     `"${r.repo.replace(/"/g, '""')}"`,
@@ -32,10 +32,10 @@ export function exportToCsv(repos: Repo[], filename = 'os-money-repos.csv') {
   downloadAnchor.remove();
 }
 
-export function exportToMarkdown(repos: Repo[], filename = 'os-money-repos.md') {
-  let md = `# Open-Source Money-Making Repositories\n\n`;
-  md += `| Name | Repository | Stars | Category | Replaces | Notes & Agency Opportunities |\n`;
-  md += `|------|------------|-------|----------|----------|------------------------------|\n`;
+export function exportToMarkdown(repos: Repo[], filename = 'open-source-alternatives.md') {
+  let md = `# Open-Source Software Alternatives & Deployment Blueprints\n\n`;
+  md += `| Name | Repository | Stars | Category | Replaces | Deployment & Value Notes |\n`;
+  md += `|------|------------|-------|----------|----------|--------------------------|\n`;
 
   for (const r of repos) {
     const link = `[${r.name}](https://github.com/${r.repo})`;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Star, Github, ExternalLink, Bookmark, Copy, Check, ArrowUpRight 
+  Star, Github, ExternalLink, Bookmark, Copy, Check, Globe 
 } from 'lucide-react';
 import { Repo } from '../types';
 import { getCategoryDetails } from '../utils/categories';
@@ -40,7 +40,7 @@ export const RepoTableView: React.FC<RepoTableViewProps> = ({
               <th scope="col" className="py-4 px-3">Stars</th>
               <th scope="col" className="py-4 px-3">Category</th>
               <th scope="col" className="py-4 px-4">Replaces</th>
-              <th scope="col" className="py-4 px-4 min-w-[280px]">Monetization & Agency Opportunity</th>
+              <th scope="col" className="py-4 px-4 min-w-[280px]">Deployment Opportunity & Value</th>
               <th scope="col" className="py-4 px-4 text-right">Actions</th>
             </tr>
           </thead>
@@ -74,11 +74,12 @@ export const RepoTableView: React.FC<RepoTableViewProps> = ({
                       </button>
 
                       <div>
-                        <div className="font-semibold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1">
+                        <div className="font-semibold text-white group-hover:text-emerald-400 transition-colors flex items-center gap-1.5">
                           <span>{repo.name}</span>
                           {repo.isMadeInIndia && (
-                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                              🇮🇳
+                            <span className="inline-flex items-center gap-0.5 text-[10px] px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-300 border border-orange-500/20">
+                              <Globe size={10} />
+                              <span>India</span>
                             </span>
                           )}
                         </div>
@@ -122,7 +123,7 @@ export const RepoTableView: React.FC<RepoTableViewProps> = ({
                     )}
                   </td>
 
-                  {/* Notes & Monetization */}
+                  {/* Notes & Opportunity */}
                   <td className="py-3.5 px-4 text-xs text-slate-300">
                     <p className="line-clamp-2 leading-relaxed">
                       {repo.note}
@@ -135,7 +136,7 @@ export const RepoTableView: React.FC<RepoTableViewProps> = ({
                       <button
                         onClick={(e) => handleCopyClone(e, repo)}
                         className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
-                        title="Copy git clone"
+                        title="Copy git clone command"
                       >
                         {isCopied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
                       </button>

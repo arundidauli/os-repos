@@ -12,7 +12,7 @@ export const REPOS: Repo[] = [
     starCount: 3200,
     cat: "bounties",
     pays: "Algora / Gitcoin Bounties",
-    note: "Get paid $7 to $10k per resolved issue on Coolify, Cal.com, tt-metal. Filter GitHub: label:\"💎 Bounty\" state:open",
+    note: "Get paid $7 to $10k per resolved issue on Coolify, Cal.com, tt-metal. Filter GitHub: label:\"Bounty\" state:open",
     monthlySavingsUsd: 0,
     website: "https://github.com/JuanM94/awesome-bounties",
     tags: ["bounties", "get-paid", "algora", "gitcoin", "freelance-code", "open-source-cash"]
@@ -43,7 +43,7 @@ export const REPOS: Repo[] = [
     starCount: 12000,
     cat: "playbooks",
     pays: "Incubator / Courses $1000",
-    note: "Indie making-money guide: verified business models, monetization playbooks, and launch tactics for solo devs",
+    note: "Indie builder business guide: verified business models, revenue playbooks, and launch tactics for solo devs",
     monthlySavingsUsd: 0,
     website: "https://github.com/mezod/awesome-indie",
     tags: ["indie-hacker", "monetization", "solopreneur", "guide", "playbook", "cash-flow"]
@@ -108,7 +108,7 @@ export const REPOS: Repo[] = [
     starCount: 313000,
     cat: "resources",
     pays: "All Proprietary Cloud Services",
-    note: "313k★ mega-directory of network services & web apps to productize, host, and sell as agency client services",
+    note: "313k+ directory of network services & web apps to productize, host, and provide as client services",
     monthlySavingsUsd: 500,
     website: "https://awesome-selfhosted.net",
     tags: ["self-hosted", "curated-list", "productize", "sysadmin", "infrastructure"]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Star, ShieldCheck, DollarSign, Layers } from 'lucide-react';
+import { Zap, Star, Globe, DollarSign, Layers } from 'lucide-react';
 import { Repo } from '../types';
 
 interface HeroProps {
@@ -8,7 +8,7 @@ interface HeroProps {
   onSelectQuickTag?: (tag: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ repos, categoriesCount, onSelectQuickTag }) => {
+export const Hero: React.FC<HeroProps> = ({ repos }) => {
   const totalStarsCount = repos.reduce((acc, r) => acc + r.starCount, 0);
   const formattedStars = (totalStarsCount / 1000).toFixed(0) + 'k+';
   const madeInIndiaCount = repos.filter(r => r.isMadeInIndia).length;
@@ -21,21 +21,21 @@ export const Hero: React.FC<HeroProps> = ({ repos, categoriesCount, onSelectQuic
 
       {/* Badge */}
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
-        <Zap size={14} className="animate-pulse text-emerald-400" />
-        <span>Curated Enterprise & Agency Ecosystem</span>
+        <Zap size={14} className="text-emerald-400" />
+        <span>Curated Open-Source Directory</span>
       </div>
 
-      {/* Main Title */}
+      {/* Main Title - Simple, Professional, SEO Friendly */}
       <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
         Discover Open-Source <br className="hidden sm:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 drop-shadow-sm">
-          Money-Making
-        </span> Repositories
+          High-Value Alternatives
+        </span> to Paid Software
       </h1>
 
-      {/* Subtitle */}
+      {/* Subtitle - Simple Language */}
       <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-        A battle-tested catalog of high-impact open-source tools replacing pricey proprietary SaaS ($100s/mo), with verified monetization playbooks for agencies, freelancers, and startups.
+        Explore reliable, self-hosted open-source software that replaces expensive commercial subscriptions. Reduce team overhead, keep full data ownership, and build client services.
       </p>
 
       {/* Stat Cards Ribbon */}
@@ -45,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ repos, categoriesCount, onSelectQuic
             <Layers size={22} />
             <span>{repos.length}</span>
           </div>
-          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Curated Repos</span>
+          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Curated Projects</span>
         </div>
 
         <div className="glass-panel p-4 rounded-2xl flex flex-col items-center justify-center text-center">
@@ -61,15 +61,15 @@ export const Hero: React.FC<HeroProps> = ({ repos, categoriesCount, onSelectQuic
             <DollarSign size={22} />
             <span>${estimatedSavings.toLocaleString()}</span>
           </div>
-          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Mo. SaaS Replaced</span>
+          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Monthly Replaced</span>
         </div>
 
         <div className="glass-panel p-4 rounded-2xl flex flex-col items-center justify-center text-center">
           <div className="flex items-center gap-1.5 text-orange-400 font-bold text-2xl sm:text-3xl font-mono mb-1">
-            <ShieldCheck size={22} />
-            <span>{madeInIndiaCount} Repos</span>
+            <Globe size={22} />
+            <span>{madeInIndiaCount} Projects</span>
           </div>
-          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Made in India 🇮🇳</span>
+          <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider">Made in India</span>
         </div>
       </div>
     </section>

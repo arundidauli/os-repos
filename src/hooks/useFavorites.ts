@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export function useFavorites() {
   const [favorites, setFavorites] = useState<string[]>(() => {
     try {
-      const stored = localStorage.getItem('os_money_favorites');
+      const stored = localStorage.getItem('os_vault_favorites') || localStorage.getItem('os_money_favorites');
       return stored ? JSON.parse(stored) : [];
     } catch {
       return [];
@@ -12,7 +12,7 @@ export function useFavorites() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('os_money_favorites', JSON.stringify(favorites));
+      localStorage.setItem('os_vault_favorites', JSON.stringify(favorites));
     } catch (e) {
       console.error('Failed to save favorites to localStorage', e);
     }

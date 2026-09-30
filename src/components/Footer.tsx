@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Github, Heart, ArrowUp } from 'lucide-react';
+import { Package, Github, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -17,14 +17,14 @@ export const Footer: React.FC = () => {
           <div className="space-y-2 max-w-sm">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-                <Terminal size={17} />
+                <Package size={17} />
               </div>
               <span className="font-bold text-lg text-white">
-                OS<span className="text-emerald-400">Money</span>
+                OS<span className="text-emerald-400">Vault</span>
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              Curated catalog of high-ROI open-source software, business models, and enterprise alternatives. 100% static, client-side, zero tracker.
+              Curated directory of production-ready open-source alternatives to commercial software. 100% static, client-side, zero tracking.
             </p>
           </div>
 
@@ -55,10 +55,10 @@ export const Footer: React.FC = () => {
         {/* Divider & Copyright */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} OSMoney. Free & Open Source under MIT License.
+            © {new Date().getFullYear()} OSVault. Open-source software under the MIT License.
           </p>
           <p className="text-center sm:text-right text-[11px] text-slate-600 max-w-md">
-            All proprietary product names and registered trademarks (Zapier, Salesforce, Airtable, etc.) are property of their respective owners.
+            All proprietary product names and registered trademarks (Zapier, Salesforce, Airtable, etc.) belong to their respective owners.
           </p>
         </div>
 

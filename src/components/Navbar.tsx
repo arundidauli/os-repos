@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
-  Terminal, Bookmark, Calculator, Download, 
-  Github, Sparkles
+  Package, Bookmark, Calculator, Download, 
+  Github
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -36,13 +36,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:scale-105 group-hover:shadow-emerald-500/40 transition-all duration-300">
-            <Terminal size={19} className="text-black font-extrabold" />
+            <Package size={19} className="text-black font-extrabold" />
           </div>
           <div>
             <span className="font-bold text-xl tracking-tight text-white flex items-center gap-1.5">
-              OS<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Money</span>
+              OS<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Vault</span>
               <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold tracking-wider">
-                Production
+                Open Directory
               </span>
             </span>
           </div>
@@ -54,10 +54,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={onOpenCalculator}
             className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300 hover:text-white px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-emerald-500/30"
-            title="Calculate SaaS savings vs Open Source"
+            title="Estimate cost savings with open-source alternatives"
           >
             <Calculator size={15} className="text-emerald-400" />
-            <span className="hidden sm:inline">Savings Calculator</span>
+            <span className="hidden sm:inline">Cost Calculator</span>
           </button>
 
           {/* Bookmarks / Favorites Toggle */}
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 ? 'bg-amber-500/20 border-amber-500/40 text-amber-300 shadow-lg shadow-amber-500/10'
                 : 'bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white'
             }`}
-            title="Show saved repositories"
+            title="Show bookmarked projects"
           >
             <Bookmark size={15} className={showOnlyFavorites ? 'fill-amber-400 text-amber-400' : 'text-slate-400'} />
             <span className="hidden md:inline">Saved</span>
@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-200 hover:text-white px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30 border border-emerald-500/30 transition-all shadow-sm"
           >
             <Github size={16} />
-            <span className="hidden sm:inline">Star & Share</span>
+            <span className="hidden sm:inline">GitHub</span>
           </a>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { 
   X, Github, Globe, Star, Terminal, Zap, 
-  DollarSign, Check, Copy, Bookmark, ExternalLink, ShieldCheck, Briefcase
+  Check, Copy, Bookmark, ExternalLink, Briefcase
 } from 'lucide-react';
 import { Repo } from '../types';
 import { getCategoryDetails } from '../utils/categories';
@@ -51,11 +51,11 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
     if (type === 'clone') {
       setCopiedClone(true);
       setTimeout(() => setCopiedClone(false), 2000);
-      onShowToast('Git clone command copied!');
+      onShowToast('Git clone command copied');
     } else {
       setCopiedDocker(true);
       setTimeout(() => setCopiedDocker(false), 2000);
-      onShowToast('Deployment command copied!');
+      onShowToast('Deployment command copied');
     }
   };
 
@@ -83,8 +83,9 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
               </span>
 
               {repo.isMadeInIndia && (
-                <span className="inline-flex items-center text-xs font-medium px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/20">
-                  🇮🇳 Made in India
+                <span className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/20">
+                  <Globe size={12} />
+                  <span>Made in India</span>
                 </span>
               )}
 
@@ -131,11 +132,11 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
         {/* Content Body */}
         <div className="py-6 space-y-6">
           
-          {/* SaaS Comparison Card */}
+          {/* Software Replacement Card */}
           <div className="glass-panel p-4 sm:p-5 rounded-2xl border-white/10 space-y-2">
             <div className="flex items-center justify-between text-xs font-semibold text-slate-400 uppercase tracking-wider">
               <span className="flex items-center gap-1.5 text-rose-400">
-                <Zap size={14} /> Replaces Expensive SaaS
+                <Zap size={14} /> Replaces Commercial Software
               </span>
               {repo.monthlySavingsUsd ? (
                 <span className="text-emerald-400 font-mono">
@@ -144,17 +145,17 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
               ) : null}
             </div>
             <p className="text-base sm:text-lg font-bold text-white">
-              {repo.pays !== '-' ? repo.pays : 'Standard proprietary infrastructure'}
+              {repo.pays !== '-' ? repo.pays : 'Standard proprietary cloud software'}
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
-              By deploying this open-source solution, organizations avoid per-seat licenses, user limits, and vendor lock-in.
+              By deploying this open-source solution, organizations avoid per-seat license fees, user limits, and vendor lock-in.
             </p>
           </div>
 
-          {/* Agency & Monetization Playbook */}
+          {/* Deployment Guide & Client Opportunities */}
           <div className="bg-[#111420] p-4 sm:p-5 rounded-2xl border border-emerald-500/20 space-y-2">
             <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-              <Briefcase size={14} /> Agency & Freelancer Monetization Playbook
+              <Briefcase size={14} /> Deployment & Client Service Opportunities
             </div>
             <p className="text-sm sm:text-base font-medium text-slate-200 leading-relaxed">
               {repo.note}
@@ -164,7 +165,7 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
           {/* Quick Deployment Snippets */}
           <div className="space-y-3">
             <h4 className="text-xs uppercase font-semibold text-slate-400 tracking-wider flex items-center gap-1.5">
-              <Terminal size={14} /> Deployment & Setup Commands
+              <Terminal size={14} /> Setup & Run Commands
             </h4>
 
             {/* Docker Run / Compose */}
@@ -206,7 +207,7 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
           {repo.tags && repo.tags.length > 0 && (
             <div>
               <span className="block text-[11px] uppercase font-semibold text-slate-500 tracking-wider mb-2">
-                Tech & Use Cases
+                Tags & Features
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {repo.tags.map(tag => (
@@ -229,7 +230,7 @@ export const RepoDetailModal: React.FC<RepoDetailModalProps> = ({
             className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white text-black font-semibold text-sm hover:bg-slate-200 transition-colors"
           >
             <Github size={16} />
-            <span>Open Repository on GitHub</span>
+            <span>Open on GitHub</span>
             <ExternalLink size={13} />
           </a>
 

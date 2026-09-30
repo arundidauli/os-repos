@@ -1,6 +1,6 @@
-# 🚀 OSMoney — Open-Source High-ROI Repositories Catalog
+# OSVault — Open-Source Alternatives to Commercial Software
 
-> **A curated, production-ready directory of high-impact open-source software replacing expensive proprietary SaaS ($100s/mo), complete with monetization playbooks for agencies, freelancers, and indie builders.**
+> **A curated, production-ready directory of high-impact open-source software replacing expensive proprietary subscriptions, complete with self-hosting commands and client service guides.**
 
 [![Deploy to GitHub Pages](https://github.com/actions/workflows/deploy.yml/badge.svg)](https://github.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
@@ -9,32 +9,32 @@
 
 ---
 
-## ⚡ Highlights & Features
+## Highlights & Features
 
-- 💎 **70+ Hand-Curated Repositories**: Covering AI & Agents, Automation, CRM, ERP, Observability, Marketing, Mobile Dev, Payments, and more.
-- 💰 **SaaS Replacement & ROI Comparison**: Direct comparison with expensive tools like Zapier, Salesforce, Datadog, Calendly, Retool, DocuSign, and Typeform.
-- 🇮🇳 **Made in India Spotlight**: Prominent badges for trailblazing projects like ERPNext, Chatwoot, Appsmith, SigNoz, Bruno, Listmonk, and UPI-Utils.
-- 🧮 **Interactive SaaS Savings & Retainer Calculator**: Calculate exact monthly and annual savings and see recommended self-hosted stacks.
-- ⭐ **Local Bookmarks & Favorites**: Persisted in `localStorage` with a 1-click filter.
-- 📋 **Quick Clone & Docker Snippets**: 1-click copy for `git clone` and `docker run` / `docker compose` commands.
-- 🔍 **Power Search & Filtering**: Instant search (⌘K / Ctrl+K), category filters, and quick tags.
-- 📊 **Dual View Modes**: Switch seamlessly between modern responsive Grid cards and high-density Table comparison view.
-- 📥 **Zero-Backend Data Export**: Download filtered data as CSV, JSON, or copy a formatted GitHub Markdown table.
-- 🌐 **100% Static & GitHub Pages Ready**: Zero backend required; works directly on GitHub Pages (`https://<user>.github.io/<repo>/`).
+- **90+ Curated Repositories**: Covering AI, Automation, CRM, ERP, Observability, Marketing, Mobile Testing, and Client Billing.
+- **Commercial Tool Replacements**: Direct alternatives to expensive services such as Zapier, Salesforce, Datadog, Calendly, Retool, DocuSign, Slack, and Jira.
+- **Spotlight on India**: Prominent badges and filters for projects built by Indian teams, including ERPNext, Chatwoot, Appsmith, ToolJet, SigNoz, Bruno, and Listmonk.
+- **Interactive Cost Savings Calculator**: Estimate team and client subscription savings by selecting the commercial tools you currently pay for.
+- **Local Bookmarks**: Save favorite projects directly in your browser with local storage.
+- **One-Click Run Snippets**: Copy ready-to-run `git clone` and `docker run` / `docker compose` commands.
+- **Quick Keyboard Search**: Search projects instantly with <kbd>Cmd</kbd> + <kbd>K</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>.
+- **Dual Display Modes**: Toggle between modern Card Grid and dense Table comparison views.
+- **Client-Side Data Export**: Export the catalog to CSV, JSON, or formatted Markdown tables without any server needed.
+- **100% Static & GitHub Pages Ready**: Ready for automated deployment via GitHub Actions.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 18 + TypeScript
-- **Bundler & Dev Server**: Vite 6 (Relative base `./` for zero-configuration subpath deployment)
-- **Styling**: Tailwind CSS + Custom Glassmorphism & Cyber/Fintech Dark Palette
-- **Icons**: Lucide React
-- **Deployment**: GitHub Pages (Automated via GitHub Actions + `gh-pages` fallback)
+- **Bundler**: Vite 6 (Configured with relative base `./` for subpath hosting on GitHub Pages)
+- **Styling**: Tailwind CSS + Custom Dark Theme
+- **Icons**: Lucide React (Clean SVG icons, zero emoji dependencies)
+- **Deployment**: GitHub Pages (Automated via GitHub Actions + `gh-pages` script)
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## Quick Start (Local Development)
 
 ### 1. Clone the repository
 ```bash
@@ -57,7 +57,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ```bash
 npm run build
 ```
-The compiled, production-ready static assets will be in the `dist/` directory.
+Static assets will be compiled into the `dist/` directory.
 
 ### 5. Preview production build locally
 ```bash
@@ -66,15 +66,14 @@ npm run preview
 
 ---
 
-## 🚢 Deploy to GitHub Pages (2 Easy Options)
+## Deploy to GitHub Pages
 
 ### Option 1: Automatic Zero-Config Deployment via GitHub Actions (Recommended)
 
-1. Push your repository to GitHub (`main` or `master` branch):
+1. Push your repository to GitHub:
    ```bash
-   git init
    git add .
-   git commit -m "feat: production-ready OSMoney web app"
+   git commit -m "feat: update to OSVault with SEO and icon updates"
    git remote add origin https://github.com/<your-username>/<your-repo-name>.git
    git branch -M main
    git push -u origin main
@@ -82,7 +81,7 @@ npm run preview
 2. In your GitHub repository:
    - Go to **Settings** → **Pages**.
    - Under **Build and deployment** → **Source**, select **GitHub Actions**.
-3. That's it! The workflow at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) will automatically build and deploy your site on every push. Your site will be live at:
+3. GitHub will build and publish your site at:
    ```
    https://<your-username>.github.io/<your-repo-name>/
    ```
@@ -91,64 +90,12 @@ npm run preview
 
 ### Option 2: Deploy using the `gh-pages` CLI
 
-If you prefer deploying via local command line:
 ```bash
 npm run deploy
 ```
-This runs `npm run build` and deploys the `dist` folder to your `gh-pages` branch.
 
 ---
 
-## 📂 Project Structure
+## License
 
-```
-├── .github/
-│   └── workflows/
-│       └── deploy.yml        # GitHub Actions automated deployment
-├── src/
-│   ├── components/
-│   │   ├── CalculatorModal.tsx # SaaS savings & agency retainer calculator
-│   │   ├── ExportModal.tsx     # CSV, JSON, Markdown export
-│   │   ├── FilterBar.tsx       # Search, category, sort & view switcher
-│   │   ├── Footer.tsx          # Clean footer with MIT notice
-│   │   ├── Hero.tsx            # Animated hero section & stat ribbon
-│   │   ├── Navbar.tsx          # Header with navigation & quick action triggers
-│   │   ├── RepoCard.tsx        # Modern glass card view
-│   │   ├── RepoDetailModal.tsx # Deep-dive deployment & playbook modal
-│   │   ├── RepoTableView.tsx   # Dense tabular comparison view
-│   │   └── Toast.tsx           # Non-intrusive action feedback toasts
-│   ├── data/
-│   │   └── repos.ts            # Curated catalog with 70+ repositories
-│   ├── hooks/
-│   │   └── useFavorites.ts     # LocalStorage bookmark manager
-│   ├── types/
-│   │   └── index.ts            # TypeScript interfaces & types
-│   ├── utils/
-│   │   ├── categories.tsx      # Category metadata, colors & icons
-│   │   └── export.ts           # CSV, JSON, and Markdown generation
-│   ├── App.tsx                 # Main application state & orchestration
-│   ├── index.css               # Tailwind directives & glassmorphism
-│   └── main.tsx                # React DOM entry point
-├── index.html                  # HTML template with SEO & Open Graph meta
-├── package.json                # Project dependencies & scripts
-├── postcss.config.js           # PostCSS configuration
-├── tailwind.config.js          # Tailwind CSS theme extension
-├── tsconfig.json               # TypeScript configuration
-└── vite.config.ts              # Vite configuration (relative base for GH Pages)
-```
-
----
-
-## 🤝 Contributing
-
-Have an open-source project that helps developers save money or run an agency?
-1. Fork the repo.
-2. Add your repository to `src/data/repos.ts`.
-3. Test locally with `npm run build`.
-4. Open a Pull Request!
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). All proprietary product names and registered trademarks are property of their respective owners.
